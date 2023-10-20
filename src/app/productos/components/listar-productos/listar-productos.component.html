@@ -1,0 +1,39 @@
+<h1 class="text-center titulos">Listar Produtos</h1>
+
+<div class="row">
+    <div *ngFor="let producto of productos$ | async" class="col-md-3 targetas">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-subtitle>Reference number: {{producto.id}}</mat-card-subtitle>
+                <mat-card-title>{{producto.name}}</mat-card-title>
+                <mat-card-subtitle>Stock Disponible: {{producto.stock}}</mat-card-subtitle>
+                <!--La fecha de ingreso es solo para el administrador-->
+                <mat-card-subtitle>Fecha Ingreso: {{producto.fechaIngreso | date: 'dd/MM/YYYY' }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{producto.imagen}}" alt="Photo of a Shiba Inu">
+            
+            <mat-card-content>
+                <mat-card-title>${{producto.precio}}</mat-card-title>
+                <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                </p>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-button color="link" [routerLink]="'/productos/'+ producto.id">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                <button mat-button color="primary" (click)="editarProducto(producto)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-button color="warn" (click)="eliminarProducto(producto.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-card-actions>
+            
+        </mat-card>
+    </div>
+</div>

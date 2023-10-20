@@ -1,0 +1,56 @@
+<p class="titulo text-center">Agregar un nuevo Producto</p>
+
+<form [formGroup]="formularioProducto" (ngSubmit)="agregarProducto()">
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field appearance="fill" class="fill">
+                <mat-label class="color">Nombre del Producto</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field appearance="fill" class="fill">
+                <mat-label class="color">Categoria del Producto</mat-label>
+                <input matInput formControlName="categoria">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field appearance="fill" class="fill">
+                <mat-label class="color">Stock del Producto</mat-label>
+                <input matInput formControlName="stock">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field appearance="fill" class="fill">
+                <mat-label class="color">Precio del Producto</mat-label>
+                <input matInput formControlName="precio">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field appearance="fill" class="fill">
+                <mat-label class="color">Imagen del Producto</mat-label>
+                <input matInput formControlName="imagen">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field appearance="fill" class="fill">
+                <mat-label class="color">Fecha Ingreso</mat-label>
+                <input matInput [matDatepicker]="fechaIngreso" formControlName="fechaIngreso">
+                <mat-hint class="color">MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="fechaIngreso">
+                </mat-datepicker-toggle>
+                <mat-datepicker #fechaIngreso></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-md-8">
+            <button mat-raised-button color="primary" class="boton"
+            type="submit">Agregar producto</button>
+        </div>
+
+    </div>
+</form>

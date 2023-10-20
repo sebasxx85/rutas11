@@ -1,0 +1,13 @@
+<p>Detalle del Producto</p>
+
+<div *ngIf="(producto$ | async)">
+    <pre>
+        {{producto$ | async | json}}
+    </pre>
+</div>
+<div *ngIf="!(producto$ | async)">
+    <pre>
+        <h2>No se encontro el curso</h2>
+    </pre>
+</div>
+

@@ -1,0 +1,15 @@
+<ng-container *ngIf="sesion$ | async as sesion">
+    <div *ngIf="sesion.sesionActive">
+        <mat-toolbar color="primary">
+            <a mat-button routerLink=""><h3>Tienda Productos</h3></a>
+            <h3>{{sesion$ | async | json}}</h3>
+             <div class="espacio"></div>
+            <a mat-button routerLink="">Inicio</a>
+            <a mat-button routerLink="autentication/login">Login</a>
+            <a mat-button routerLink="productos">Productos</a>
+            <a mat-button routerLink="productos/listar">Listar Productos</a>
+            <a mat-button routerLink="productos/agregar" 
+            *ngIf="sesion.userActive?.admin">Nuevo Producto</a>      
+        </mat-toolbar>
+    </div>
+</ng-container>

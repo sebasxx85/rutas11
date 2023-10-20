@@ -1,0 +1,33 @@
+<h1 class="titulo text-center">Ingresar</h1>
+<div class="container formulario">
+    <div class="row justify-content-center">
+        <!--Ajustar tamanio form-->
+        <div class="col-md-5">
+            <form [formGroup]="formulario" (ngSubmit)="login()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field appearance="fill" class="fill">
+                            <label class="color">Nombre</label>
+                            <input matInput formControlName="user">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field appearance="fill" class="fill">
+                            <label class="color">Password</label>
+                            <input matInput formControlName="password" type="password">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-slide-toggle color="primary" formControlName="admin"
+                        >Admin user</mat-slide-toggle>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button mat-raised-button color="primary" class="boton" 
+                        type="submit">Ingresar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
